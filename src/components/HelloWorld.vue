@@ -2,8 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <img width="35%" src="../assets/elena.jpeg" :style="styleObject">
-    
-    
+
+
     <div class="des" v-if="curAttrName">
       当前滚动的是 {{ curAttrName }}
     </div>
@@ -27,77 +27,77 @@
 */
 <script>
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   data() {
     return {
-      msg: "Welcome",
-      curAttrName: "",
+      msg: 'Welcome',
+      curAttrName: '',
       filterAttrs: [
         {
-          name: "contrast",
+          name: 'contrast',
           start: 1,
           end: 200,
           value: 1,
-          status: "origin",
-          unit: "%"
+          status: 'origin',
+          unit: '%'
         },
         {
-          name: "blur",
+          name: 'blur',
           start: 0,
           end: 50,
           value: 0,
           step: 0.1,
-          status: "origin",
-          unit: "px"
+          status: 'origin',
+          unit: 'px'
         },
         {
-          name: "brightness",
+          name: 'brightness',
           start: 0,
           end: 2,
           step: 0.1,
           value: 0,
-          status: "origin",
-          unit: ""
+          status: 'origin',
+          unit: ''
         },
         {
-          name: "grayscale",
+          name: 'grayscale',
           start: 0,
           end: 200,
           value: 0,
-          status: "origin",
-          unit: "%"
+          status: 'origin',
+          unit: '%'
         },
         {
-          name: "invert",
+          name: 'invert',
           start: 0,
           end: 100,
           value: 0,
-          status: "origin",
-          unit: "%"
+          status: 'origin',
+          unit: '%'
         },
         {
-          name: "sepia",
+          name: 'sepia',
           start: 0,
           end: 100,
           value: 0,
-          status: "origin",
-          unit: "%"
+          status: 'origin',
+          unit: '%'
         },
         {
-          name: "hue-rotate",
+          name: 'hue-rotate',
           start: 0,
           end: 360,
           value: 0,
-          status: "origin",
-          unit: "deg"
+          status: 'origin',
+          unit: 'deg'
         },
         {
-          name: "opacity",
+          name: 'opacity',
           start: 0,
           end: 100,
           value: 0,
-          status: "origin",
-          unit: "%"
+          status: 'origin',
+          unit: '%'
         }
       ]
     };
@@ -105,23 +105,23 @@ export default {
   computed: {
     styleObject: function() {
       let changedArr = this.filterAttrs.filter(attr => {
-        return attr.status !== "origin";
+        return attr.status !== 'origin';
       });
       let changedStrArr = changedArr.map(
         attr => `${attr.name}(${attr.value}${attr.unit})`
       );
 
       return {
-        filter: changedStrArr.join(" ")
+        filter: changedStrArr.join(' ')
       };
     }
   },
   methods: {
-    changeValue: function(attr) {
+    changeValue: function (attr) {
       this.curAttrName = attr.name;
-      attr.status = "changed";
-    }
-  }
+      attr.status = 'changed';
+    },
+  },
 };
 </script>
 
