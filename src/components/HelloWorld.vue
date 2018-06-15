@@ -2,8 +2,9 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <img width="35%" src="../assets/elena.jpeg" :style="styleObject">
-
-
+    <div>
+      <input type="text" name="imgsrc" v-model="imgSrc">
+    </div>
     <div class="des" v-if="curAttrName">
       当前滚动的是 {{ curAttrName }}
     </div>
@@ -32,19 +33,20 @@ export default {
     return {
       msg: "Welcome",
       curAttrName: "",
+      imgSrc: "../assets/elena.jpeg",
       filterAttrs: [
         {
           name: "contrast",
           start: 1,
           end: 200,
-          value: 1,
+          value: 100,
           status: "origin",
           unit: "%"
         },
         {
           name: "blur",
           start: 0,
-          end: 50,
+          end: 30,
           value: 0,
           step: 0.1,
           status: "origin",
@@ -55,7 +57,7 @@ export default {
           start: 0,
           end: 2,
           step: 0.1,
-          value: 0,
+          value: 1,
           status: "origin",
           unit: ""
         },
@@ -95,7 +97,7 @@ export default {
           name: "opacity",
           start: 0,
           end: 100,
-          value: 0,
+          value: 100,
           status: "origin",
           unit: "%"
         },
