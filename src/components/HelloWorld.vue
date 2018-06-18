@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <img width="35%" src="../assets/elena.jpeg" :style="styleObject">
+    <img width="35%" :src="imgSrc" :style="styleObject">
     <div>
       <input type="text" name="imgsrc" v-model="imgSrc">
     </div>
@@ -33,7 +33,8 @@ export default {
     return {
       msg: "Welcome",
       curAttrName: "",
-      imgSrc: "../assets/elena.jpeg",
+      imgSrc:
+        "https://raw.githubusercontent.com/yantze/visualization-of-css-filter/701147657563e1152cd4c773241c979c1cfead6e/src/assets/elena.jpeg",
       filterAttrs: [
         {
           name: "contrast",
